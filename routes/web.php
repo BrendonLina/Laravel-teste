@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProductController;
 
 route::get('/', [HomeController::class,'index']);
 
@@ -12,6 +13,8 @@ route::get('/produto', [ProdutoController::class,'index']);
 route::post('/produto', [ProdutoController::class,'index']);
 
 route::get('/produtos', [ProdutosController::class,'teste']);
+
+route::resource('/product', [ProductController::class,'index']);
 
 
 //ROTAS SIMPLES DE TESTE DE ESTUDO
