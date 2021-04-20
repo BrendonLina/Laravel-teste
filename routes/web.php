@@ -14,7 +14,19 @@ route::post('/produto', [ProdutoController::class,'index']);
 
 route::get('/produtos', [ProdutosController::class,'teste']);
 
-route::resource('/product', [ProductController::class,'index']);
+
+/*Route::resource('product', ProductController::class)
+        ->missing(function (Request $request) {
+            return Redirect::route('product.index');
+        });*/
+
+Route::resource('product', ProductController::class)->only([
+	'index' , 'create'
+]);
+
+//Route::resource('product', ProductController::class)->except([
+    //'show', 'store', 'update', 'destroy'
+//]);        
 
 
 //ROTAS SIMPLES DE TESTE DE ESTUDO
