@@ -13,7 +13,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.produtos.index');
+        $teste = 1234;
+        $teste2 = 4321;
+        $teste3 = [];
+        return view('admin.pages.produtos.index', compact('teste', 'teste2' , 'teste3'));
     }
 
     /**
