@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
-        $teste = 1996;
-        return "TESTANDO E FUNCIONANDO ".$teste;
+        return view('admin.pages.produtos.index');
     }
 
     /**
@@ -25,7 +23,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return "Criado com sucesso ! ! ! ";
+        //
     }
 
     /**

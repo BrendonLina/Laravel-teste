@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
-use App\Http\Controllers\ProdutosController;
+//use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsController;
 
 route::get('/', [HomeController::class,'index']);
 
@@ -12,7 +13,9 @@ route::get('/produto', [ProdutoController::class,'index']);
 
 route::post('/produto', [ProdutoController::class,'index']);
 
-route::get('/produtos', [ProdutosController::class,'teste']);
+//route::get('/produtos', [ProdutosController::class,'teste']);
+
+route::get('/produtos', [ProductsController::class,'index']);
 
 
 /*Route::resource('product', ProductController::class)
