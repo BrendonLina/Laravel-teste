@@ -7,7 +7,17 @@ Gestão de Produtos
 @endsection()
 
 @section('content')
-<h1>funciona aeeee</h1>
+
+
+@if(isset($produtos))
+	@foreach($produtos as $produto)
+		<p>{{ $produto }} </p>
+	@endforeach 
+	@else 
+		Lista vazia !
+@endif
+<hr>
+<h1>funcionando ! ! !</h1>
 	@if($teste === '1234')
 		é igual !
 	
@@ -31,6 +41,24 @@ Gestão de Produtos
 	
 	@empty($teste3)
 		<p>Vazio...</p>
-	@endempty				
+	@else 
+		Bom vazio não está !	
+	@endempty
+
+	@switch($teste)
+
+		@case(44)
+			valor de 44
+			@break
+		@case(55)
+			valor de 55
+			@break
+		@case(123)
+			valor de 123
+			@break
+		@default
+			Nenhuma dessas :(
+
+	@endswitch					
 
 @endsection()

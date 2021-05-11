@@ -8,7 +8,10 @@
 	<div class="container">
 		<!-- Diretivas no laravel abaixo -->
 		@yield('content')
-	</div>	
+	</div>
+
+
+
 
 </body>
 </html>

@@ -15,7 +15,9 @@ class ProductController extends Controller
     {
         
         $teste = 1996;
-        return "TESTANDO E FUNCIONANDO ".$teste;
+        return "testando e funcionando " .$teste;
+
+        
     }
 
     /**
