@@ -16,8 +16,9 @@ class ProductsController extends Controller
         $teste = 1234;
         $teste2 = 4321;
         $teste3 = [1,2,3,4,5,6,7,8,9,10];
-        $produtos = ['Tv','Geladeira','Fogão','Armario'];
-        return view('admin.pages.produtos.index', compact('teste', 'teste2' , 'teste3', 'produtos'));
+        $produtos = ['Tv' => 'samsung','asus'];
+        $testing = ['bmw','mercedes','ford','volkswagen','chevrolet','fiat'];
+        return view('admin.pages.produtos.index', compact('teste', 'teste2' , 'teste3', 'produtos', 'testing'));
     }
 
     /**

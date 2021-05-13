@@ -6,12 +6,22 @@ Gestão de Produtos
 
 @endsection()
 
+{{-- inicio da sessão @section + o nome dela entre '' ou seja content --}}
 @section('content')
 
-
+{{-- verificação se o campo esta preenchido --}}
 @if(isset($produtos))
+	{{-- ao dar foreach padrao e colocar variavel no plural e depois no singular --}}
 	@foreach($produtos as $produto)
 		<p>{{ $produto }} </p>
+	@endforeach 
+	@else 
+		Lista vazia !
+@endif
+<hr>
+@if(isset($testing))
+	@foreach($testing as $testin)
+		<p class=" @if ($loop->last) last @endif"> {{ $testin }} </p>
 	@endforeach 
 	@else 
 		Lista vazia !
@@ -27,7 +37,7 @@ Gestão de Produtos
 		Não é igual !
 	
 	@endif()
-
+	{{-- oposto de if --}}
 	@unless($teste === '1234')
 		Tudo errado irmão
 	@else
@@ -62,3 +72,14 @@ Gestão de Produtos
 	@endswitch					
 
 @endsection()
+
+@push('styles')
+<style>
+	.last{background: red;}
+</style>
+@endpush
+
+@push('scripts')
+
+	<script>document.body.style.background = '#999'</script>
+@endpush
