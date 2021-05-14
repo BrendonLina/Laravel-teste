@@ -28,7 +28,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.produtos.create');
     }
 
     /**
@@ -39,7 +39,14 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //metodos para pegar informação do campo input ou qualquer outro campo
+        //dd($request->all());
+        //dd($request->only('nome', 'descricao'));
+        //dd($request->input('nome', 'descricao', 'default'));
+        //dd($request->except('_token', 'descricao'));
+        if($request->file('foto')->isValid()){
+            dd($request->file('foto')->store('produtos'));
+        }
     }
 
     /**
@@ -61,7 +68,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pages.produtos.edit', compact('id'));
     }
 
     /**
@@ -73,7 +80,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd("Editando o produto {$id}");
     }
 
     /**

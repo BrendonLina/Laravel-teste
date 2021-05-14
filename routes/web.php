@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
-//use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 
@@ -15,7 +15,7 @@ route::post('/produto', [ProdutoController::class,'index']);
 
 //route::get('/produtos', [ProdutosController::class,'teste']);
 
-route::get('/produtos', [ProductsController::class,'index']);
+route::get('/products', [ProductsController::class,'index']);
 
 
 /*Route::resource('product', ProductController::class)
@@ -29,7 +29,11 @@ Route::resource('product', ProductController::class)->only([
 
 //Route::resource('product', ProductController::class)->except([
     //'show', 'store', 'update', 'destroy'
-//]);        
+//]);
+
+Route::resource('products', ProductsController::class)->only([
+	'index' , 'create' , 'store', 'edit', 'update'
+]);
 
 
 //ROTAS SIMPLES DE TESTE DE ESTUDO

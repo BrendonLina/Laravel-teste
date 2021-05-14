@@ -8,6 +8,9 @@ Gestão de Produtos
 
 {{-- inicio da sessão @section + o nome dela entre '' ou seja content --}}
 @section('content')
+<h1>Exibindo produtos</h1>
+<a href="{{ route('products.create') }}"> Cadastrar</a>
+    <hr>
 
 {{-- verificação se o campo esta preenchido --}}
 @if(isset($produtos))
@@ -83,3 +86,4 @@ Gestão de Produtos
 
 	<script>document.body.style.background = '#999'</script>
 @endpush
+
