@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateProductsRequest;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -34,11 +35,19 @@ class ProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\StoreUpdateProductsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProductsRequest $request)
     {
+        
+        /*$request->validate([
+            'nome' => 'required|min:3|max:255',
+            'descricao' => 'nullable|min:3|max:10000',
+            'foto' => 'required|image',
+        ]);*/
+
+        dd('Tudo pronto vamos trabalhar !');
         //metodos para pegar informação do campo input ou qualquer outro campo
         //dd($request->all());
         //dd($request->only('nome', 'descricao'));

@@ -13,7 +13,7 @@ route::get('/produto', [ProdutoController::class,'index']);
 
 route::post('/produto', [ProdutoController::class,'index']);
 
-//route::get('/produtos', [ProdutosController::class,'teste']);
+route::get('/produtos', [ProdutosController::class,'teste']);
 
 route::get('/products', [ProductsController::class,'index']);
 

@@ -78,12 +78,12 @@ Gestão de Produtos
 
 @push('styles')
 <style>
-	.last{background: red;}
+	.last{background: rgb(0, 255, 242);}
 </style>
 @endpush
 
 @push('scripts')
 
-	<script>document.body.style.background = '#999'</script>
+	<script>document.body.style.background = '#1024'</script>
 @endpush
 
