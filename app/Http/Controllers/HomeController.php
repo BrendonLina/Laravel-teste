@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
     	
         /*$header = array();
         $header = [
@@ -30,7 +31,14 @@ class HomeController extends Controller
     $response = curl_exec($ch);
     curl_close($ch);
 
-    var_dump($response);
+    $response = json_decode($response,true);
+    return view('home', ['response'=>$response]);
+    
+
+    
+    
+
+    
 
 
         /*$header = array();
