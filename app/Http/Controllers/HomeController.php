@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Arr;
 
 
 class HomeController extends Controller
@@ -17,9 +18,15 @@ class HomeController extends Controller
         'token' => 'CB3EB3B5RD2C2R4A75RA298R1AD86A3C48C5'
         ];*/
         
+        
+        $cepes = ['cepe' => 'aa', 'rua' => 'aa', 'uf' => 'aa', 'cidade' => 'aa', 'distrito' => 'aa'];
+        $produtos = $request->input('cep');
+        $cepe = $produtos;
+
+        
         $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, "http://api.frenet.com.br/CEP/Address/26190350");
+    curl_setopt($ch, CURLOPT_URL, "http://api.frenet.com.br/CEP/Address/{$cepe}");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -30,9 +37,13 @@ class HomeController extends Controller
 
     $response = curl_exec($ch);
     curl_close($ch);
-
+    
+    $duct = ['cep' => '1234567',
+             'nome' => 'Cleber'];
+    
     $response = json_decode($response,true);
-    return view('home', ['response'=>$response]);
+   
+    return view('home', compact('cepe', 'produtos','duct','cepes'), ['response'=>$response]);
     
 
     

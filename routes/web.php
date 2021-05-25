@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 
 route::get('/', [HomeController::class,'index']);
+route::post('/', [HomeController::class,'index']);
 
 route::get('/produto', [ProdutoController::class,'index']);
 
