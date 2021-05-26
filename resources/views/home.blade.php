@@ -11,12 +11,18 @@
 	<br>Sua empresa é: <b>{{$empresa--}}</b></br>-->
 	<form action="" method="POST">
 		@csrf
-	<input type="text" name="cep" placeholder="00000-000"><br>
-	<input type="text" name="cepe" placeholder="rua"><br>
-	<input type="text" name="cepe" placeholder="{{$produtos}}"><br>
-	<input type="text" name="cepe" placeholder="{{$cepe}}"><br>
-	<label><br> {{$response['CEP']}} </label>
-	<label><br> {{$response['Street']}} </label>
+		<input type="text" name="cep" placeholder="cep">
+		@if(isset($cepe))
+		
+		<label> O CEP : {{ $cepe }} </label>
+		<label><br> {{$response['CEP']}} </label>
+		<label><br> {{$response['Street']}} </label>
+		<label><br> {{$response['District']}} </label>
+		<label><br> {{$response['City']}}/{{$response['UF']}} </label>
+		
+		@endif
+		
+
 	<input type="submit" value="Ok"><br>
 
 	
