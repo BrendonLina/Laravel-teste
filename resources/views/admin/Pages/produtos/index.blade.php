@@ -9,8 +9,33 @@ Gestão de Produtos
 {{-- inicio da sessão @section + o nome dela entre '' ou seja content --}}
 @section('content')
 <h1>Exibindo produtos</h1>
-<a href="{{ route('products.create') }}"> Cadastrar</a>
+<a href="{{ route('products.create') }}" class="btn btn-primary"> Cadastrar</a>
     <hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th width="100">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($produtos as $produto)
+				<tr>
+					<td> {{ $produto->name }} </td>
+					<td> {{ $produto->price }} </td>
+					<td>
+						<a href="{{ route('products.show', $produto->id)}}"> Detalhes</a>
+					</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	
+	
+	
+	
+	<hr>
 
 {{-- verificação se o campo esta preenchido --}}
 @if(isset($produtos))
@@ -87,27 +112,5 @@ Gestão de Produtos
 	<script>document.body.style.background = '#1024'</script>
 @endpush
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-	Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body">
-		  ...
-		</div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		  <button type="button" class="btn btn-primary">Save changes</button>
-		</div>
-	  </div>
-	</div>
-  </div>
+
 

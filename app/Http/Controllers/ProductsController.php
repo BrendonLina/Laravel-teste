@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUpdateProductsRequest;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductsController extends Controller
 {
@@ -17,9 +18,11 @@ class ProductsController extends Controller
         $teste = 1234;
         $teste2 = 4321;
         $teste3 = [1,2,3,4,5,6,7,8,9,10];
-        $produtos = ['Tv' => 'samsung','asus'];
+        
+        $produtos = Product::get();
+        
         $testing = ['bmw','mercedes','ford','volkswagen','chevrolet','fiat'];
-        return view('admin.pages.produtos.index', compact('teste', 'teste2' , 'teste3', 'produtos', 'testing'));
+        return view('admin.pages.produtos.index', ['produtos' => $produtos], compact('teste', 'teste2' , 'teste3','testing'));
     }
 
     /**
@@ -66,7 +69,15 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        //$produto = Produto::where('id', $id)->first();
+        
+        if(!$produto = Product::find($id))
+            return redirect()->back();
+        
+            return view('admin.pages.produtos.show', [
+            'produto' => $produto
+        ]);
     }
 
     /**
