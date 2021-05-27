@@ -43,22 +43,43 @@ class ProductsController extends Controller
      */
     public function store(StoreUpdateProductsRequest $request)
     {
-        
-        /*$request->validate([
-            'nome' => 'required|min:3|max:255',
-            'descricao' => 'nullable|min:3|max:10000',
-            'foto' => 'required|image',
-        ]);*/
+        //método 1
+        $data = $request->only('nome','price','description');
 
-        dd('Tudo pronto vamos trabalhar !');
+        Product::create($data);
+
+        //$product = Product::create($data); 
+        
+        //Product::create($data);
+        
+        return redirect()->route('products.index');
+
+        //forma alternativa de criar produto 
+
+        //$product = new Product;
+        //$product->name = $data['nome'];
+        //ou
+        //$product->name = $request->name;
+        //$product->save();
+
+        //método 2 
+
+        //$data = $request->all();
+
+        //Product::create($data);
+
+        //$product = new Product;
+
+
+        //dd('Tudo pronto vamos trabalhar !');
         //metodos para pegar informação do campo input ou qualquer outro campo
         //dd($request->all());
         //dd($request->only('nome', 'descricao'));
         //dd($request->input('nome', 'descricao', 'default'));
         //dd($request->except('_token', 'descricao'));
-        if($request->file('foto')->isValid()){
-            dd($request->file('foto')->store('produtos'));
-        }
+        //if($request->file('foto')->isValid()){
+            //dd($request->file('foto')->store('produtos'));
+        
     }
 
     /**

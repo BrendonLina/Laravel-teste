@@ -25,8 +25,9 @@ class StoreUpdateProductsRequest extends FormRequest
     {
         return [
             'nome' => 'required|min:3|max:255',
-            'descricao' => 'nullable|min:3|max:10000',
-            'foto' => 'required|image',
+            'descricao' => 'required|min:3|max:10000',
+            'preco' => 'required',
+            'foto' => 'nullable|image',
         ];
     }
 
@@ -35,7 +36,7 @@ class StoreUpdateProductsRequest extends FormRequest
             'nome.required' => 'Nome é obrigatório !',
             'nome.min' => 'Opa ! Minimo de 3 caracteres !',
             'nome.max' => 'Opa ! Limite maximo de caracteres atingido !',
-            'foto.required' => 'Selecione uma imagem  !'
+            
         ];
     }
 }
