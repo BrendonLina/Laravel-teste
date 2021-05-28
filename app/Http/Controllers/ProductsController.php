@@ -44,24 +44,26 @@ class ProductsController extends Controller
     public function store(StoreUpdateProductsRequest $request)
     {
         //método 1
-        $data = $request->only('nome','price','description');
+        //$data = $request->only('name','description','price');
 
-        Product::create($data);
+        //Product::create($data);
 
         //$product = Product::create($data); 
         
         //Product::create($data);
         
-        return redirect()->route('products.index');
+        
 
         //forma alternativa de criar produto 
 
-        //$product = new Product;
-        //$product->name = $data['nome'];
+        $product = new Product;
+        //
         //ou
-        //$product->name = $request->name;
-        //$product->save();
-
+        $product->name = $request->nome;
+        $product->price = $request->preco;
+        $product->description = $request->descricao;
+        $product->save();
+        return redirect()->route('products.index');
         //método 2 
 
         //$data = $request->all();
@@ -132,6 +134,11 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$produto = Product::find($id))
+        return redirect()->back();
+        
+        $produto->delete();
+
+        return redirect()->route('products.index');
     }
 }

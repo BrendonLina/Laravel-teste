@@ -15,7 +15,7 @@
         </ul> 
     @endif()
     
-    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data" class="form">
+    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="form">
         @csrf
         <div class="form-group">
             <input type="text" class="form-control" name="nome" placeholder="nome" value="{{ old('nome') }}">

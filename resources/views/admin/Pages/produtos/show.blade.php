@@ -13,4 +13,13 @@
     
 </ul>
 
+<form action=" {{ route('products.destroy', $produto->id) }}" method="POST">
+@csrf
+@method('delete')
+
+<button type="submit" class="btn btn-danger btn-sm"> Deletar o produto : {{ $produto->id }}</button>
+
+
+</form>
+
 @endsection

@@ -33,7 +33,7 @@ Route::resource('product', ProductController::class)->only([
 //]);
 
 Route::resource('products', ProductsController::class)->only([
-	'index' , 'create' , 'store', 'edit', 'update', 'show'
+	'index' , 'create' , 'store', 'edit', 'update', 'show','destroy'
 ]);
 
 
