@@ -6,6 +6,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\FreteController;
 
 route::get('/', [HomeController::class,'index']);
 route::post('/', [HomeController::class,'index']);
@@ -18,6 +19,7 @@ route::get('/produtos', [ProdutosController::class,'teste']);
 
 route::get('/products', [ProductsController::class,'index']);
 
+Route::resource('frete', FreteController::class);
 
 /*Route::resource('product', ProductController::class)
         ->missing(function (Request $request) {

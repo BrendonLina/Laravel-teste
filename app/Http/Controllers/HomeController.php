@@ -43,7 +43,7 @@ class HomeController extends Controller
     
     $response = json_decode($response,true);
    
-    return view('home', compact('cepe', 'produtos','duct','cepes'), ['response'=>$response]);
+    return view('home', compact('cepe', 'produtos'), ['response'=>$response]);
     
 
     
