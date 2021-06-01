@@ -8,12 +8,16 @@
 </head>
 <body>
     <h1>Calculo do frete</h1>
+
     <label> Entregue por :<b> {{ $response['ShippingSevicesArray'][0]['Carrier'] }} </b></label><br>
     <label> Método de envio : <b> {{ $response['ShippingSevicesArray'][0]['ServiceDescription'] }} </b></label><br>
     <label> Preço : <b>{{ $response['ShippingSevicesArray'][0]['ShippingPrice'] }}</b></label><br>
        
     <label> Método de envio : <b> {{ $response['ShippingSevicesArray'][1]['ServiceDescription'] }} </b></label><br>
-    <label> Preço : <b> {{ $response['ShippingSevicesArray'][1]['ShippingPrice'] }} </b></label><br>
+    <label> Preço : <b> {{ $response['ShippingSevicesArray'][1]['ShippingPrice'] }} </b></label><br>    
+        
+     
+    
     
 </body>
 </html>

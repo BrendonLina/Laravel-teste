@@ -25,6 +25,7 @@ Gestão de Produtos
 					<td> {{ $produto->name }} </td>
 					<td> {{ $produto->price }} </td>
 					<td>
+						<a href="{{ route('products.edit', $produto->id)}}"> Editar</a>
 						<a href="{{ route('products.show', $produto->id)}}"> Detalhes</a>
 					</td>
 				</tr>

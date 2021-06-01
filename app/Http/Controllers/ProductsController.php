@@ -111,7 +111,11 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.pages.produtos.edit', compact('id'));
+        if(!$produto = Product::find($id))
+            return redirect()->back();
+        
+        
+        return view('admin.pages.produtos.edit', compact('produto'));
     }
 
     /**
@@ -123,7 +127,11 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd("Editando o produto {$id}");
+        if(!$produto = Product::find($id))
+            return redirect()->back();
+        
+        $produto->update($request->all());
+        return redirect()->route('products.index');
     }
 
     /**

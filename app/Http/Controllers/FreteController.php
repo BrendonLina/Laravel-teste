@@ -13,9 +13,11 @@ class FreteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
    {
     
+    //$cep = $request->input('cep');
+
     $cep = 22620020;
 
     $cepes = 31170470;
@@ -60,7 +62,7 @@ class FreteController extends Controller
  ]);
     
     $response = json_decode($response,true);
-    return view('frete' , ['response'=>$response]);
+    return view('frete', ['response'=>$response]);
     //dd($response); 
     //return $response;
    }
