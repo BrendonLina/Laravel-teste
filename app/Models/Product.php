@@ -9,5 +9,20 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome','preco','descricao','foto'];
+    protected $fillable = ['name','price','description','image'];
+
+    public function search($filter = '')
+    {
+        $results = $this->where(function ($query) use($filter){
+            if ($filter)
+            {
+                $query->where('name','=',$filter);
+                $query->where('description','=',$filter);
+            }
+        })
+        ->paginate();
+
+        return $results;
+    }
+
 }

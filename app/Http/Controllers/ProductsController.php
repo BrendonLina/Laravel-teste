@@ -59,9 +59,9 @@ class ProductsController extends Controller
         $product = new Product;
         //
         //ou
-        $product->name = $request->nome;
-        $product->price = $request->preco;
-        $product->description = $request->descricao;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
         $product->save();
         return redirect()->route('products.index');
         //método 2 
@@ -121,11 +121,11 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUpdateProductsRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUpdateProductsRequest $request, $id)
     {
         if(!$produto = Product::find($id))
             return redirect()->back();
@@ -149,4 +149,13 @@ class ProductsController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    /**
+     * Seach products ou filtrar produtos
+     */
+    public function search(Request $request)
+    {
+        //
+    }
 }
+

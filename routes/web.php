@@ -33,7 +33,7 @@ Route::resource('product', ProductController::class)->only([
 //Route::resource('product', ProductController::class)->except([
     //'show', 'store', 'update', 'destroy'
 //]);
-
+//Route::any('/products/search', [ProductsController::class,'search'])->name('products.search');
 Route::resource('products', ProductsController::class)->only([
 	'index' , 'create' , 'store', 'edit', 'update', 'show','destroy'
 ]);

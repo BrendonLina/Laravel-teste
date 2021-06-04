@@ -10,7 +10,13 @@ Gestão de Produtos
 @section('content')
 <h1>Exibindo produtos</h1>
 <a href="{{ route('products.create') }}" class="btn btn-primary"> Cadastrar</a>
-    <hr>
+<hr>
+{{--<form action="{{ route('products.search') }}" method="post" class="form form-inline">
+@csrf
+<input type="text" name="filter" placeholder="Filtrar:" class="form-control">
+<button type="submit" class="btn btn-info"> Pesquisar </button>
+</form>
+	<hr>--}}
 		<table class="table">
 			<thead>
 				<tr>
