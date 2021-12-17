@@ -1,0 +1,7 @@
+passo 1 - Para rodar o projeto, clone ele aqui desse repositório.
+
+passo 2 - no terminal da pasta, rode o comando composer install
+
+passo 3 - cria um banco de dados com o nome " projetolaravel "
+
+obs: ou rode um migrate.
